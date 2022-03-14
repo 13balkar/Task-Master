@@ -37,9 +37,7 @@
         <li class="nav-item active">
           <a class="nav-link" href="./expense.html">Finance <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../ABOUT US/about.html">About</a>
-        </li>
+      
       </ul>
     </div>
   </nav>
@@ -122,8 +120,10 @@
           <ul class="list">
           </ul>
           <div class="input">
-              <input type="text" id="expense-title-input" name="description" placeholder="Description">
-              <select name="" id="expense-title-type">
+            <textarea type="text" id="expense-title-input" name="description" placeholder="Description" style="height: 3.3rem; width: 25rem;" rows="1" cols="30" border="1px solid"></textarea>
+
+              <!-- <input type="text" id="expense-title-input" name="description" placeholder="Description"> -->
+              <select name=""  style="height: 3.3rem; width: 8.5rem;" id="expense-title-type">
                 <option value="food">Food</option>
                 <option value="Rent">Rent</option>
                 <option value="Travel">Travel</option>
@@ -131,7 +131,9 @@
                 <option value="Groceries">Groceries</option>
                 <option value="Others">Others</option>
               </select>
-              <input type="number" id="expense-amount-input" name="amount" placeholder="₹0">
+            <textarea  type="number" id="expense-amount-input" name="amount" placeholder="₹0"  style="height: 3.3rem; width: 25rem;" rows="1" border="1px solid"></textarea>
+
+              <!-- <input type="number" id="expense-amount-input" name="amount" placeholder="₹0"> -->
               <div class="add-expense"><img src="pictures/plus-07.png" alt=""></div>
           </div>
         </div>
@@ -140,15 +142,19 @@
             <ul class="list">
             </ul>
             <div class="input">
-                <input type="text" id="income-title-input" name="description" placeholder="Description">
-                <select name="" id="income-title-type">
+            <textarea type="text" id="income-title-input" name="description" placeholder="Description" style="height: 3.3rem; width: 25rem;" rows="1" cols="30" border="1px solid"></textarea>
+
+                <!-- <input type="text" id="income-title-input" name="description" placeholder="Description"> -->
+                <select name="" style="height: 3.3rem; width: 8.5rem;" id="income-title-type">
                   <option value="Salary">Salary</option>
                   <option value="Bonus">Bonus</option>
                   <option value="Award">Award</option>
                   <option value="Interest">Interest</option>
                   <option value="Others">Others</option>
                 </select>
-                <input type="number" id="income-amount-input" name="amount" placeholder="₹0">
+            <textarea type="number" id="income-amount-input" name="amount" placeholder="₹0"  style="height: 3.3rem; width: 25rem;" rows="1" border="1px solid"></textarea>
+                
+                <!-- <input type="number" id="income-amount-input" name="amount" placeholder="₹0"> -->
                 <div class="add-income"><img src="pictures/plus-07.png" alt=""></div>
             </div>
         </div>
@@ -157,8 +163,11 @@
           <ul class="list">
           </ul>
           <div class="input">
-            <input type="text" id="investment-title-input" name="description" placeholder="Description">
-            <select name="" id="investment-title-type">
+            <textarea type="text" id="investment-title-input" name="description" placeholder="Description" style="height: 3.3rem; width: 25rem;" rows="1" cols="30" border="1px solid"></textarea>
+
+            <!-- <textarea type="text" id="investment-title-input" name="description" placeholder="Description" rows="1" cols="30" border="1px solid"></textarea> -->
+            <!-- <input type="text" id="investment-title-input" name="description" placeholder="Description"> -->
+            <select name=""  style="height: 3.3rem; width: 8.5rem;" id="investment-title-type">
               <option value="CryptoCurrency">CryptoCurrency</option>
               <option value="Stocks">Stocks</option>
               <option value="Gold">Gold</option>
@@ -166,7 +175,9 @@
               <option value="Fixed Deposits">Fixed Deposits</option>
               <option value="Others">Others</option>
             </select>
-            <input type="number" id="investment-amount-input" name="amount" placeholder="₹0">
+            <textarea type="number" id="investment-amount-input" name="amount" placeholder="₹0" style="height: 3.3rem; width: 25rem;" rows="1" cols="30" border="1px solid"></textarea>
+            
+            <!-- <input type="number" id="investment-amount-input" name="amount" placeholder="₹0"> -->
             <div class="add-investment"><img src="pictures/plus-07.png" alt=""></div>
           </div>
         </div>
