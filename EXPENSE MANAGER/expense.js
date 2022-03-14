@@ -13,6 +13,10 @@ const incomeList = document.querySelector('#income-list .list');
 const investmentList = document.querySelector('#investment-list .list');
 const allList = document.querySelector('#all-list .list');
 
+const expensetag = document.querySelector('#expense-title-type');
+const incometag = document.querySelector('#income-title-type');
+const investmenttag = document.querySelector('#investment-title-type');
+
 const expenseDesc = document.querySelector('#expense-title-input');
 const expenseAmount = document.querySelector('#expense-amount-input');
 const incomeDesc = document.querySelector('#income-title-input');
@@ -107,6 +111,7 @@ function hide( elArray ) {
 function toAddExpense () {
     let entry = {
         type : "expense",
+        tag:expensetag.value,
         desc : expenseDesc.value,
         amount : parseInt(expenseAmount.value)
     }
@@ -131,6 +136,7 @@ addExpense1.addEventListener("keyup", function(event) {
 function toAddIncome () {
     let entry = {
         type : "income",
+        tag:incometag.value,
         desc : incomeDesc.value,
         amount : parseInt(incomeAmount.value)
     }
@@ -150,6 +156,7 @@ addIncome1.addEventListener("keyup", function(event) {
 function toAddInvestment() {
     let entry = {
         type : "investment",
+        tag:investmenttag.value,
         desc : investmentDesc.value,
         amount : parseInt(investmentAmount.value)
     }
@@ -178,14 +185,15 @@ var d = new Date();
 document.querySelector('.month h3').innerHTML =  `${monthNames[d.getMonth()]} ${d.getFullYear()}`;
 
 
-function show(list, type, desc, amount, index) {
+function show(list, type,tag, desc, amount, index) {
     var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
     var d = new Date();
     const entry = ` <li id="${index}" class="${type}">
                     <div class="date"> ${d.getDate()} ${monthNames[d.getMonth()]} ${d.getFullYear()} </div>
                     <div class="entry"> 
-                    <div class = "desc"> ${desc} : </div>
+                    <div class = "desc"> ${tag} : </div>
                     <div class="amount"> ${amount} </div>
+                    <div class = "desc">( ${desc} ) </div>
                     <div id="delete"></div>
                     </li> `;
     list.insertAdjacentHTML ("afterBegin", entry);
@@ -204,13 +212,13 @@ function update() {
     clearList([ expenseList, incomeList, investmentList, allList]);
     entriesList.forEach ( (entry, index) => {
         if (entry.type=="expense")
-            show(expenseList, entry.type, entry.desc, entry.amount, index);
+            show(expenseList, entry.type,entry.tag, entry.desc, entry.amount, index);
         else if (entry.type=="income")
-                show(incomeList, entry.type, entry.desc, entry.amount, index); 
+                show(incomeList, entry.type,entry.tag, entry.desc, entry.amount, index); 
         else if (entry.type == "investment")
-                show (investmentList, entry.type, entry.desc, entry.amount, index);
+                show (investmentList, entry.type,entry.tag, entry.desc, entry.amount, index);
         
-        show(allList, entry.type, entry.desc, entry.amount, index);
+        show(allList, entry.type,entry.tag, entry.desc, entry.amount, index);
     });
 
     pieChart (totalExpense, totalIncome, totalInvestment);
